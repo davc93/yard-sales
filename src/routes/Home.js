@@ -1,152 +1,8 @@
+import { Navbar } from "../components/Navbar"
 
 export function Home() {
     document.querySelector('#app').innerHTML = `
-    <nav>
-    <img src="./icons/icon_menu.svg" alt="menu" class="menu">
-
-    <div class="navbar-left">
-        <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
-
-        <ul>
-            <li>
-                <a href="/">All</a>
-            </li>
-            <li>
-                <a href="/">Clothes</a>
-            </li>
-            <li>
-                <a href="/">Electronics</a>
-            </li>
-            <li>
-                <a href="/">Furnitures</a>
-            </li>
-            <li>
-                <a href="/">Toys</a>
-            </li>
-            <li>
-                <a href="/">Others</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="navbar-right">
-        <ul>
-            <li class="navbar-email">platzi@example.com</li>
-            <li class="navbar-shopping-cart">
-                <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
-                <div>2</div>
-            </li>
-        </ul>
-    </div>
-    <div class="desktop-menu inactive">
-        <ul>
-            <li>
-                <a href="/" class="title">My orders</a>
-            </li>
-
-            <li>
-                <a href="/">My account</a>
-            </li>
-
-            <li>
-                <a href="/">Sign out</a>
-            </li>
-        </ul>
-    </div>
-    <div class="mobile-menu inactive">
-        <ul>
-            <li>
-                <a href="/">CATEGORIES</a>
-            </li>
-            <li>
-                <a href="/">All</a>
-            </li>
-            <li>
-                <a href="/">Clothes</a>
-            </li>
-            <li>
-                <a href="/">Electronics</a>
-            </li>
-            <li>
-                <a href="/">Furnitures</a>
-            </li>
-            <li>
-                <a href="/">Toys</a>
-            </li>
-            <li>
-                <a href="/">Other</a>
-            </li>
-        </ul>
-
-        <ul>
-            <li>
-                <a href="/">My orders</a>
-            </li>
-            <li>
-                <a href="/">My account</a>
-            </li>
-        </ul>
-
-        <ul>
-            <li>
-                <a href="/" class="email">platzi@example.com</a>
-            </li>
-            <li>
-                <a href="/" class="sign-out">Sign out</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<aside id="shoppingCartContainer" class="inactive">
-    <div class="title-container">
-        <img src="./icons/flechita.svg" alt="arrow">
-        <p class="title">My order</p>
-    </div>
-
-    <div class="my-order-content">
-        <div class="shopping-cart">
-            <figure>
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="bike">
-            </figure>
-            <p>Bike</p>
-            <p>$30,00</p>
-            <img src="./icons/icon_close.png" alt="close">
-        </div>
-
-        <div class="shopping-cart">
-            <figure>
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="bike">
-            </figure>
-            <p>Bike</p>
-            <p>$30,00</p>
-            <img src="./icons/icon_close.png" alt="close">
-        </div>
-
-        <div class="shopping-cart">
-            <figure>
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="bike">
-            </figure>
-            <p>Bike</p>
-            <p>$30,00</p>
-            <img src="./icons/icon_close.png" alt="close">
-        </div>
-
-        <div class="order">
-            <p>
-                <span>Total</span>
-            </p>
-            <p>$560.00</p>
-        </div>
-
-        <button class="primary-button">
-            Checkout
-        </button>
-    </div>
-    </div>
-</aside>
+    
 <aside id="productDetail" class="inactive">
     <div class="product-detail-close">
         <img src="./icons/icon_close.png" alt="close">
@@ -165,19 +21,53 @@ export function Home() {
     </div>
 </aside>
 <section class="main-container">
-    <div class="cards-container">
-
-    </div>
+    
 </section>
     `
+    document.querySelector('body').insertAdjacentElement('afterBegin',Navbar())
     const menuEmail = document.querySelector('.navbar-email');
     const desktopMenu = document.querySelector('.desktop-menu')
     const menuHamIcon = document.querySelector('.menu')
     const mobileMenu = document.querySelector('.mobile-menu')
     const menuCartIcon = document.querySelector('.navbar-shopping-cart')
     const shoppingCartContainer = document.querySelector('#shoppingCartContainer')
+    const productList = [
+
+    ]
+    productList.push({
+        name: 'Bike',
+        price: 120,
+        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    })
+    productList.push({
+        name: 'Pantalla',
+        price: 220,
+        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    })
+    productList.push({
+        name: 'Computadora',
+        price: 520,
+        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    });
+    productList.push({
+        name: 'Bike',
+        price: 120,
+        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    })
+    productList.push({
+        name: 'Pantalla',
+        price: 220,
+        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    })
+    productList.push({
+        name: 'Computadora',
+        price: 520,
+        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    });
+
+    
     const productDetailContainer = document.querySelector('#productDetail')
-    const cardsContainer = document.querySelector('.cards-container')
+    // const cardsContainer = document.querySelector('.cards-container')
     const productDetailCloseIcon = document.querySelector('.product-detail-close')
     menuEmail.addEventListener('click', toggleDesktopMenu)
     menuHamIcon.addEventListener('click', toggleMobileMenu)
@@ -194,7 +84,11 @@ export function Home() {
         productDetailContainer.classList.add('inactive')
     }
 
-    function renderProducts(products) {
+    const cardsContainer = document.createElement('div');
+    cardsContainer.classList.add('cards-container');
+
+
+    function createProductsList(products) {
         products.forEach((product) => {
             const productCard = document.createElement('div');
             productCard.classList.add('product-card');
@@ -223,6 +117,8 @@ export function Home() {
         })
 
     }
+    createProductsList(productList)
+    document.querySelector('.main-container').append(cardsContainer)
     function toggleDesktopMenu() {
         const isAsideClosed = shoppingCartContainer.classList.contains('inactive')
         if (!isAsideClosed) {
@@ -260,42 +156,9 @@ export function Home() {
 
 
 
-    const productList = [
-
-    ]
-    productList.push({
-        name: 'Bike',
-        price: 120,
-        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    })
-    productList.push({
-        name: 'Pantalla',
-        price: 220,
-        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    })
-    productList.push({
-        name: 'Computadora',
-        price: 520,
-        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    });
-    productList.push({
-        name: 'Bike',
-        price: 120,
-        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    })
-    productList.push({
-        name: 'Pantalla',
-        price: 220,
-        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    })
-    productList.push({
-        name: 'Computadora',
-        price: 520,
-        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    });
 
 
 
-    renderProducts(productList)
+
 
 }
