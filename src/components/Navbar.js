@@ -1,20 +1,18 @@
-
-
 export function Navbar() {
-    const navbar = document.createElement('div')
-    const aside = document.createElement('aside');
-    aside.id = "shoppingCartContainer";
-    aside.className = 'inactive'
-    aside.innerHTML = `
+  const navbar = document.createElement('div');
+  const aside = document.createElement('aside');
+  aside.id = 'shoppingCartContainer';
+  aside.className = 'inactive';
+  aside.innerHTML = `
     <div class="title-container">
         <img src="/icons/flechita.svg" alt="arrow">
         <p class="title">My order</p>
     </div>
 
-    `
-    
-    const nav = document.createElement('nav');
-    nav.innerHTML = `
+    `;
+
+  const nav = document.createElement('nav');
+  nav.innerHTML = `
     <img src="/icons/icon_menu.svg" alt="menu" class="menu">
 
     <div class="navbar-left">
@@ -125,10 +123,9 @@ export function Navbar() {
         </ul>
     </div>
     
-    `
-    
-    navbar.append(nav,aside)
+    `;
 
-    
-    return navbar
+  navbar.append(nav, aside);
+
+  return navbar;
 }

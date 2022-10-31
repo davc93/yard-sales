@@ -1,9 +1,7 @@
-import { insertLogo, insertNavbar } from "../utils"
+import { insertLogo, insertNavbar } from '../utils';
 
-export const Signup = () => { 
-
-    document.querySelector('#app').innerHTML = 
-    `
+export const Signup = () => {
+  document.querySelector('#app').innerHTML = `
     <div class="login">
     <div class="form-container">
       <h1 class="title">My account</h1>
@@ -23,7 +21,7 @@ export const Signup = () => {
         <input type="submit" value="Create" class="primary-button login-button">
       </form>
     </div>
-    `
-    insertNavbar()
-    insertLogo()
-}
+    `;
+  insertNavbar();
+  insertLogo();
+};

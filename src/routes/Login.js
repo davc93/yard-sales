@@ -1,20 +1,20 @@
-import { Navbar } from "../components/Navbar"
-import { login } from "../firebase/auth"
-import { insertLogo, insertNavbar } from "../utils"
+import { Navbar } from '../components/Navbar';
+import { login } from '../firebase/auth';
+import { insertLogo, insertNavbar } from '../utils';
 
 export const Login = () => {
-    const handleLogin = (event) => {
-        event.preventDefault()
-        const {
-            email,
-            password
-        } = event.target
-        login(email.value,password.value)
-        event.target.reset()
-        window.location.pathname = '/'
-    }
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const {
+      email,
+      password,
+    } = event.target;
+    login(email.value, password.value);
+    event.target.reset();
+    window.location.pathname = '/';
+  };
 
-    document.querySelector('#app').innerHTML = `
+  document.querySelector('#app').innerHTML = `
     <div class="login-page">
     <div class="login">
     <div class="form-container">
@@ -35,9 +35,8 @@ export const Login = () => {
     </div>
   </div>
   </div>
-    `
-    insertNavbar()
-    insertLogo()
-    document.querySelector('.form').addEventListener('submit',handleLogin)
-
-}
+    `;
+  insertNavbar();
+  insertLogo();
+  document.querySelector('.form').addEventListener('submit', handleLogin);
+};
