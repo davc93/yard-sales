@@ -30,7 +30,11 @@ nav {
 }
 
 .logo {
+    cursor: pointer;
     width: 100px;
+}
+.close-icon{
+    cursor: pointer;
 }
 
 .navbar-left ul,
@@ -78,6 +82,7 @@ nav {
 
 .navbar-shopping-cart {
     position: relative;
+    cursor: pointer;
 }
 
 .navbar-shopping-cart div {

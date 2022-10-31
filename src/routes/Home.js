@@ -6,6 +6,7 @@ import {
   toggleMobileMenu,
   closeProductDetailAside,
   openProductDetailAside,
+  insertLogo,
 } from "../utils";
 import { Cart } from "../components/Cart";
 const productDetail = (image,title,price,description) => {
@@ -46,6 +47,7 @@ export function Home() {
 
   const { renderCart } = Cart();
   insertNavbar();
+  insertLogo()
   const cartIcon = document.querySelector(".navbar-shopping-cart");
   cartIcon.addEventListener("click", () => {
     renderCart();

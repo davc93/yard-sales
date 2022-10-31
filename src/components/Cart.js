@@ -13,7 +13,6 @@ export function Cart() {
         showNumberItems()
     }
     const renderCart = () => {
-        console.log(cart);
         const myOrderContent = document.createElement('div')
         myOrderContent.classList.add('my-order-content')
         cart.items.forEach((product)=>{
@@ -29,6 +28,7 @@ export function Cart() {
             price.textContent = product.price
             const close = document.createElement('img')
             close.src = '/icons/icon_close.png'
+            close.classList.add('close-icon')
             close.alt = 'close'
             close.addEventListener('click',()=>{
                 removeItem(product)
@@ -36,7 +36,6 @@ export function Cart() {
 
             figure.append(img)
             shoppingCart.append(figure,title,price,close)
-            console.log(shoppingCart);
             myOrderContent.append(shoppingCart)
 
         })

@@ -15,6 +15,7 @@ export const login = (email,password) => {
 }
 
 export const logout = () => {
+
     const auth = getAuth();
     signOut(auth)
         .then(()=>{

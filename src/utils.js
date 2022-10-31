@@ -54,3 +54,13 @@ export function closeProductDetailAside() {
     const productDetailContainer = document.querySelector('#productDetail')
     productDetailContainer.classList.add('inactive')
 }
+export function insertLogo() {
+    const logo = document.createElement('img')
+    logo.src = '/logos/logo_yard_sale.svg'
+    logo.alt = 'menu'
+    logo.classList.add('logo')
+    logo.addEventListener('click',()=>{
+        window.location.pathname = '/'
+    })
+    document.querySelector('.navbar-left').insertAdjacentElement('afterbegin',logo)
+}

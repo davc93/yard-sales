@@ -12,14 +12,13 @@ export function Navbar() {
     </div>
 
     `
-
+    
     const nav = document.createElement('nav');
     nav.innerHTML = `
     <img src="/icons/icon_menu.svg" alt="menu" class="menu">
 
     <div class="navbar-left">
     
-        <img src="/logos/logo_yard_sale.svg" alt="logo" class="logo">
         
 
         <ul>
@@ -40,6 +39,12 @@ export function Navbar() {
             </li>
             <li>
                 <a href="/">Others</a>
+            </li>
+            <li>
+            <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/signup">Sign Up</a>
             </li>
 
         </ul>
@@ -92,6 +97,12 @@ export function Navbar() {
             </li>
             <li>
                 <a href="/">Other</a>
+            </li>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/signup">Sign Up</a>
             </li>
         </ul>
 

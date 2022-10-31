@@ -1,4 +1,4 @@
-import { insertNavbar } from "../utils"
+import { insertLogo, insertNavbar } from "../utils"
 
 export const Signup = () => { 
 
@@ -25,4 +25,5 @@ export const Signup = () => {
     </div>
     `
     insertNavbar()
+    insertLogo()
 }

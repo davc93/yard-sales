@@ -1,6 +1,6 @@
 import { Navbar } from "../components/Navbar"
 import { login } from "../firebase/auth"
-import { insertNavbar } from "../utils"
+import { insertLogo, insertNavbar } from "../utils"
 
 export const Login = () => {
     const handleLogin = (event) => {
@@ -37,6 +37,7 @@ export const Login = () => {
   </div>
     `
     insertNavbar()
+    insertLogo()
     document.querySelector('.form').addEventListener('submit',handleLogin)
 
 }
