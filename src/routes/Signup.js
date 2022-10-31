@@ -1,3 +1,5 @@
+import { insertNavbar } from "../utils"
+
 export const Signup = () => { 
 
     document.querySelector('#app').innerHTML = 
@@ -22,4 +24,5 @@ export const Signup = () => {
       </form>
     </div>
     `
+    insertNavbar()
 }
