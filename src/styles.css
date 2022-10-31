@@ -345,6 +345,7 @@ aside {
 
 .product-card .product-info figure {
     margin: 0;
+    cursor: pointer;
 }
 
 .product-card .product-info figure img {
