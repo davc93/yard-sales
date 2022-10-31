@@ -1,5 +1,6 @@
 import { Navbar } from "../components/Navbar"
 import { login } from "../firebase/auth"
+import { insertNavbar } from "../utils"
 
 export const Login = () => {
     const handleLogin = (event) => {
@@ -35,7 +36,7 @@ export const Login = () => {
   </div>
   </div>
     `
-    document.querySelector('.login-page').insertAdjacentElement('beforebegin',Navbar())
+    insertNavbar()
     document.querySelector('.form').addEventListener('submit',handleLogin)
 
 }
