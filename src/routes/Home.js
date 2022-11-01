@@ -35,10 +35,6 @@ export function Home() {
     <p></p>
     <p></p>
     <p></p>
-    <button class="primary-button add-to-cart-button">
-      <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
-      Add to cart
-    </button>
   </div>
 </aside>
 
@@ -60,20 +56,36 @@ export function Home() {
   menuEmail.addEventListener('click', toggleDesktopMenu);
   menuHamIcon.addEventListener('click', toggleMobileMenu);
   menuCartIcon.addEventListener('click', toggleCart);
-
+  const handleAddCart = (product)=>{       
+    return () => {
+      addToCart(product)
+    }
+  }
   function createProductsList(products) {
     products.forEach((product) => {
+      const handleAddCart = ()=>{       
+        addToCart(product)
+      }
+      const handleAddCartClick = ()=>{
+
+        sendProductDetailInfo(product.images[0],product.title,product.price,product.description)
+        if(document.querySelector('.primary-button.add-to-cart-button')){
+          document.querySelector('.primary-button.add-to-cart-button').remove()
+        }
+        const addToCart = document.createElement('button')
+        addToCart.textContent = 'Add to cart'
+        addToCart.classList.add('primary-button','add-to-cart-button')
+        addToCart.addEventListener('click',handleAddCart)
+        document.querySelector('.product-info').insertAdjacentElement('beforeend',addToCart)
+        openProductDetailAside()
+        document.querySelector('.product-detail-close',).addEventListener('click', closeProductDetailAside);
+      }
       const productCard = document.createElement('div');
       productCard.classList.add('product-card');
       const productImg = document.createElement('img');
       productImg.src = product.images[0];
       productImg.alt = product.title;
-      productImg.addEventListener('click', () => {
-        sendProductDetailInfo(product.images[0],product.title,product.price,product.description)
-        document.querySelector('.add-to-cart-button').addEventListener('click',addToCart(product))
-        openProductDetailAside()
-        document.querySelector('.product-detail-close',).addEventListener('click', closeProductDetailAside);
-      });
+      productImg.addEventListener('click',handleAddCartClick);
       const productInfo = document.createElement('div');
       productInfo.classList.add('product-info');
       const productInfoDiv = document.createElement('div');
