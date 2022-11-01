@@ -5,6 +5,12 @@ export const cart = {
   user: 'Diego',
 };
 export function Cart() {
+  const totalPrice = () => {
+    
+    return cart.items.reduce((previous,current)=> previous + current.price,0)
+    
+
+  }
   const addToCart = (product) => {
     cart.items.push(product);
     showNumberItems();
@@ -35,6 +41,22 @@ export function Cart() {
       shoppingCart.append(figure, title, price, close);
       myOrderContent.append(shoppingCart);
     });
+
+    const order = document.createElement('div')
+    order.classList.add('order')
+    const total = document.createElement('p')
+    const totalSpan = document.createElement('span')
+    totalSpan.textContent = 'total'
+    const price = document.createElement('p')
+    price.textContent = totalPrice().toString()
+    const checkout = document.createElement('button')
+    checkout.classList.add('primary-button')
+    checkout.textContent = 'Checkout'
+    order.append(total,price)
+    total.append(totalSpan)
+    myOrderContent.insertAdjacentElement('beforeend',checkout)
+    checkout.insertAdjacentElement('beforebegin',order)
+
     if (document.querySelector('.my-order-content')) {
       clearCartElement();
     }
@@ -54,6 +76,8 @@ export function Cart() {
     renderCart();
     showNumberItems();
   };
+
+
   return {
     cart,
     addToCart,

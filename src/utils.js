@@ -41,7 +41,7 @@ export function toggleCart() {
 
   shoppingCartContainer.classList.toggle('inactive');
 }
-export function openProductDetailAside({ }) {
+export function openProductDetailAside() {
   const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
   const productDetailContainer = document.querySelector('#productDetail');
   shoppingCartContainer.classList.add('inactive');

@@ -10,44 +10,49 @@ import {
 } from '../utils';
 import { Cart } from '../components/Cart';
 
-const productDetail = (image, title, price, description) => {
-  const aside = document.createElement('aside');
-  aside.id = 'productDetail';
-  aside.className = 'inactive';
-  aside.innerHTML = `
-    <div class="product-detail-close">
-        <img src="./icons/icon_close.png" alt="close">
-    </div>
-    <img src=${image}
-        alt=${title}>
-    <div class="product-info">
-        <p>${price}</p>
-        <p>${title}</p>
-        <p>${description}
-        </p>
-        <button class="primary-button add-to-cart-button">
-            <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
-            Add to cart
-        </button>
-    </div>
-`;
-  return aside;
+const sendProductDetailInfo = (image, title, price, description) => {
+
+  const imgSelected = document.querySelector('#productDetail > img')
+  const priceSelected = document.querySelector('#productDetail p:nth-child(1)')
+  const titleSelected = document.querySelector('#productDetail p:nth-child(2)')
+  const descriptionSelected = document.querySelector('#productDetail p:nth-child(3)')
+  imgSelected.src = image
+  imgSelected.alt = title
+  priceSelected.innerHTML = price
+  titleSelected.innerHTML = title
+  descriptionSelected.innerHTML = description
+
 };
 export function Home() {
   const app = document.querySelector('#app');
   app.innerHTML = `
-        <section class="main-container">
-        </section>
-    `;
+<aside class="inactive" id="productDetail">
+  <div class="product-detail-close">
+    <img src="./icons/icon_close.png" alt="close">
+  </div>
+  <img src='' alt=''>
+  <div class="product-info">
+    <p></p>
+    <p></p>
+    <p></p>
+    <button class="primary-button add-to-cart-button">
+      <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+      Add to cart
+    </button>
+  </div>
+</aside>
 
-  const { renderCart } = Cart();
+<section class="main-container">
+</section>
+`;
+
+  const { renderCart,addToCart } = Cart();
   insertNavbar();
   insertLogo();
   const cartIcon = document.querySelector('.navbar-shopping-cart');
   cartIcon.addEventListener('click', () => {
     renderCart();
   });
-  const { addToCart, cart } = Cart();
   const menuEmail = document.querySelector('.navbar-email');
   const menuHamIcon = document.querySelector('.menu');
   const menuCartIcon = document.querySelector('.navbar-shopping-cart');
@@ -63,7 +68,12 @@ export function Home() {
       const productImg = document.createElement('img');
       productImg.src = product.images[0];
       productImg.alt = product.title;
-      productImg.addEventListener('click', openProductDetailAside);
+      productImg.addEventListener('click', () => {
+        sendProductDetailInfo(product.images[0],product.title,product.price,product.description)
+        document.querySelector('.add-to-cart-button').addEventListener('click',addToCart(product))
+        openProductDetailAside()
+        document.querySelector('.product-detail-close',).addEventListener('click', closeProductDetailAside);
+      });
       const productInfo = document.createElement('div');
       productInfo.classList.add('product-info');
       const productInfoDiv = document.createElement('div');
@@ -85,10 +95,8 @@ export function Home() {
       productCard.append(productImg, productInfo);
 
       cardsContainer.append(productCard);
-      app.insertAdjacentElement('beforebegin', productDetail(product.images[0], product.title, product.price, product.description));
-      document.querySelector(
-        '.product-detail-close',
-      ).addEventListener('click', closeProductDetailAside);
+
+
     });
   }
   const cardsContainer = document.createElement('div');
