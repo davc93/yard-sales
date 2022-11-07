@@ -4,6 +4,11 @@ Bienvenido a yard sales , una increible tienda online donde podras encontrar la 
 
 El siguiente proyecto toma como base el proyecto yard-sales de platzi para el [feedback challenge](https://platzi.com/blog/feedbackchallenge-comparte-tu-proyecto-y-aprende-en-comunidad/?utm_source=Iterable&utm_medium=email&utm_campaign=20221028-AC-active-FeedbackChallenge)
 
+**Enlaces:**
+- [**App**](https://yard-sales-9043f.firebaseapp.com/)
+
+- [**Repo**](https://github.com/davc93/yard-sales)
+
 ## Funcionalidades agregadas
 
 - Routing estatico y paginas(login,signup)
@@ -23,7 +28,13 @@ El siguiente proyecto toma como base el proyecto yard-sales de platzi para el [f
 # Yard Sales
 
 Welcome to yard sales, an incredible online store where you can find the most beautiful things.
+
 The following project is based on the platzi yard-sales project for the [feedback challenge](https://platzi.com/blog/feedbackchallenge-share-your-project-and-learn-in-community/?utm_source=Iterable&utm_medium=email&utm_campaign=20221028-AC-active-FeedbackChallenge)
+
+**Links:**
+- [**App**](https://yard-sales-9043f.firebaseapp.com/)
+
+- [**Repo**](https://github.com/davc93/yard-sales)
 
 ## Added features
 
@@ -33,7 +44,7 @@ The following project is based on the platzi yard-sales project for the [feedbac
 ## Technologies
 - HTML5
 - CSS3
--VanillaJS
+- VanillaJS
 
 ## Upcoming Features
 - Authentication with firebase auth
