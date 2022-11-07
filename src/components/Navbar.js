@@ -1,5 +1,6 @@
 export function Navbar() {
   const navbar = document.createElement('div');
+  navbar.classList.add('navbar--container')
   const aside = document.createElement('aside');
   aside.id = 'shoppingCartContainer';
   aside.className = 'inactive';
