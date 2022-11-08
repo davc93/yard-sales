@@ -1,4 +1,6 @@
+
 # Yard Sales
+
 
 Bienvenido a yard sales , una increible tienda online donde podras encontrar la cosas mas bonitas.
 
@@ -24,12 +26,23 @@ El siguiente proyecto toma como base el proyecto yard-sales de platzi para el [f
 - Router dinámico sin recarga de página
 - optimzaciones y ordenamiento de código
 
+## Installation
+
+```sh
+
+git clone https://github.com/davc93/yard-sales
+cd yard-sales
+npm i
+npm run dev
+
+```
+
 
 # Yard Sales
 
 Welcome to yard sales, an incredible online store where you can find the most beautiful things.
 
-The following project is based on the platzi yard-sales project for the [feedback challenge](https://platzi.com/blog/feedbackchallenge-share-your-project-and-learn-in-community/?utm_source=Iterable&utm_medium=email&utm_campaign=20221028-AC-active-FeedbackChallenge)
+The following project is based on the platzi yard-sales project for the [feedback challenge](https://platzi.com/blog/feedbackchallenge-share-your-project-and-learn-in-community/?utm_source=Iterable&**utm_medium=email&utm_campaign=20221028-AC-active-FeedbackChallenge)
 
 **Links:**
 - [**App**](https://yard-sales-9043f.firebaseapp.com/)
